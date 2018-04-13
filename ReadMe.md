@@ -90,7 +90,16 @@
             employees.add(e5);
     
             printEmployeeByAge(employees, "Employee greater than 30", employee -> employee.getAge() > 30);
-            printEmployeeByAge(employees, "Employee less than 30", employee -> employee.getAge() < 30);
+            printEmployeeByAge(employees, "\nEmployee less than 30", employee -> employee.getAge() < 30);
+    
+            //We can also use anonymous class instead of lambda
+    
+            printEmployeeByAge(employees, "\nEmployee less than 4", new Predicate<Employee>() {
+                @Override
+                public boolean test(Employee employee) {
+                    return employee.getAge() < 4;
+                }
+            });
     
         }
     
